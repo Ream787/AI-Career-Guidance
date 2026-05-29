@@ -1,6 +1,6 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router";
-import { GraduationCap, Eye, EyeOff, LogIn, AlertCircle } from "lucide-react";
+import { GraduationCap, Eye, EyeOff, LogIn, AlertCircle, Globe } from "lucide-react";
 import { useAuth } from "../context/AuthContext";
 
 export function Login() {
@@ -9,7 +9,7 @@ export function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
-  const { login } = useAuth();
+  const { login, loginWithGoogle, user } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
   const from = (location.state as any)?.from?.pathname || "/";
@@ -30,6 +30,22 @@ export function Login() {
       setError(result.error || "Login failed.");
     }
   };
+
+  const handleGoogleLogin = async () => {
+    setIsLoading(true);
+    setError("");
+    const result = await loginWithGoogle();
+    setIsLoading(false);
+    if (!result.success) {
+      setError(result.error || "Google sign-in failed.");
+    }
+  };
+
+  useEffect(() => {
+    if (user) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#3169a4] via-[#25527f] to-[#3169a4] flex items-center justify-center p-4">
@@ -58,6 +74,20 @@ export function Login() {
         <div className="bg-white rounded-2xl shadow-2xl p-8">
           <h2 className="text-[#3169a4] mb-1">Welcome back</h2>
           <p className="text-gray-500 text-sm mb-6">Enter your credentials to access your account</p>
+          <button
+            type="button"
+            onClick={handleGoogleLogin}
+            disabled={isLoading}
+            className="w-full mb-4 bg-white border border-gray-300 text-gray-700 hover:bg-gray-50 rounded-lg py-3 flex items-center justify-center gap-2 transition-colors disabled:opacity-60 disabled:cursor-not-allowed"
+          >
+            <Globe className="w-4 h-4" />
+            Continue with Google
+          </button>
+          <div className="flex items-center gap-3 mb-4">
+            <div className="h-px flex-1 bg-gray-200" />
+            <span className="text-xs text-gray-400 uppercase tracking-[0.2em]">or</span>
+            <div className="h-px flex-1 bg-gray-200" />
+          </div>
 
           {error && (
             <div className="flex items-center gap-2 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 mb-5 text-sm">

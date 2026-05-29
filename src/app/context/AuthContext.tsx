@@ -23,6 +23,7 @@ interface AuthContextType {
   user: User | null;
   isAuthenticated: boolean;
   login: (email: string, password: string) => Promise<{ success: boolean; error?: string }>;
+  loginWithGoogle: () => Promise<{ success: boolean; error?: string }>;
   logout: () => void;
   register: (data: RegisterData) => Promise<{ success: boolean; error?: string }>;
   updateProfile: (data: Partial<User>) => Promise<void>;
@@ -69,6 +70,53 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     }
   });
 
+  const loadOrCreateUserProfile = async (
+    id: string,
+    email?: string,
+    metadata?: Record<string, any>
+  ): Promise<User | null> => {
+    const { data: profile, error: profileError } = await supabase
+      .from("users")
+      .select("*")
+      .eq("id", id)
+      .maybeSingle();
+
+    if (profileError) {
+      console.error("Profile load error:", profileError);
+      return null;
+    }
+
+    if (profile) {
+      return mapUser(profile);
+    }
+
+    const fullName = metadata?.full_name || "";
+    const [firstName, ...rest] = fullName.split(" ");
+    const lastName = rest.join(" ");
+
+    const profilePayload: Record<string, any> = {
+      id,
+      email: email || metadata?.email || "",
+      first_name: firstName || "Student",
+      last_name: lastName || "User",
+      role: "student",
+      created_at: new Date().toISOString(),
+    };
+
+    const { data: createdUser, error: insertError } = await supabase
+      .from("users")
+      .insert([profilePayload])
+      .select("*")
+      .single();
+
+    if (insertError || !createdUser) {
+      console.error("Profile creation error:", insertError);
+      return null;
+    }
+
+    return mapUser(createdUser);
+  };
+
   useEffect(() => {
     if (user) {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(user));
@@ -76,6 +124,46 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       localStorage.removeItem(STORAGE_KEY);
     }
   }, [user]);
+
+  useEffect(() => {
+    const restoreSession = async () => {
+      try {
+        const { data } = await supabase.auth.getSession();
+        const sessionUser = data.session?.user;
+        if (sessionUser) {
+          const loaded = await loadOrCreateUserProfile(
+            sessionUser.id,
+            sessionUser.email ?? undefined,
+            sessionUser.user_metadata
+          );
+          if (loaded) {
+            setUser(loaded);
+          }
+        }
+      } catch (error) {
+        console.error("Error restoring auth session:", error);
+      }
+    };
+
+    restoreSession();
+
+    const { data: authListener } = supabase.auth.onAuthStateChange(async (_event, session) => {
+      if (session?.user) {
+        const loaded = await loadOrCreateUserProfile(
+          session.user.id,
+          session.user.email ?? undefined,
+          session.user.user_metadata
+        );
+        if (loaded) {
+          setUser(loaded);
+        }
+      } else {
+        setUser(null);
+      }
+    });
+
+    return () => authListener.subscription.unsubscribe();
+  }, []);
 
   const login = async (email: string, password: string): Promise<{ success: boolean; error?: string }> => {
     const normalizedEmail = email.trim().toLowerCase();
@@ -103,8 +191,25 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     return { success: true };
   };
 
-  const logout = () => {
+  const logout = async () => {
+    await supabase.auth.signOut();
     setUser(null);
+  };
+
+  const loginWithGoogle = async (): Promise<{ success: boolean; error?: string }> => {
+    const { error } = await supabase.auth.signInWithOAuth({
+      provider: "google",
+      options: {
+        redirectTo: `${window.location.origin}/login`,
+      },
+    });
+
+    if (error) {
+      console.error("Google login error:", error);
+      return { success: false, error: error.message || "Google sign-in failed." };
+    }
+
+    return { success: true };
   };
 
   const register = async (data: RegisterData): Promise<{ success: boolean; error?: string }> => {
@@ -189,7 +294,17 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   };
 
   return (
-    <AuthContext.Provider value={{ user, isAuthenticated: !!user, login, logout, register, updateProfile }}>
+    <AuthContext.Provider
+      value={{
+        user,
+        isAuthenticated: !!user,
+        login,
+        loginWithGoogle,
+        logout,
+        register,
+        updateProfile,
+      }}
+    >
       {children}
     </AuthContext.Provider>
   );
