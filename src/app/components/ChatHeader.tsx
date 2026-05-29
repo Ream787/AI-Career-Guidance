@@ -46,9 +46,9 @@ export function ChatHeader() {
 
   return (
     <header className="bg-white border-b border-gray-200 relative z-50">
-      <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div className="w-full mx-auto px-4 py-3 flex items-center gap-4">
         {/* Logo */}
-        <Link to="/" className="flex items-center gap-2.5">
+        <Link to="/" className="flex items-center gap-2.5 flex-shrink-0">
           <div className="bg-[#3169a4] p-2 rounded-lg">
             <GraduationCap className="w-5 h-5 text-white" />
           </div>
@@ -59,7 +59,7 @@ export function ChatHeader() {
         </Link>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-5">
           {navLinks.map((l) => (
             <Link
               key={l.to}
@@ -72,7 +72,7 @@ export function ChatHeader() {
         </nav>
 
         {/* Right side */}
-        <div className="hidden md:flex items-center gap-3">
+        <div className="hidden md:flex items-center gap-3 ml-auto">
           <button
             onClick={toggleTheme}
             className="p-2 rounded-lg border border-gray-200 bg-white text-gray-900 hover:bg-gray-50 transition-colors dark:bg-black dark:text-white dark:border-gray-700 dark:hover:bg-[#111]"

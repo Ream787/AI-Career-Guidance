@@ -374,7 +374,7 @@ export function ChatInterface() {
       {/* Main Chat Area */}
       <div className="flex-1 flex flex-col overflow-hidden min-h-0">
         {/* Chat Header */}
-        <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center gap-3 flex-shrink-0">
+        <div className="bg-white border-b border-gray-200 px-4 py-3 flex items-center justify-between gap-3 flex-shrink-0">
           {!sidebarOpen && (
             <button
               onClick={() => setSidebarOpen(true)}
@@ -457,12 +457,12 @@ export function ChatInterface() {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Message BC CourseFinder™..."
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#3169a4] focus:border-transparent text-sm bg-gray-50"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent text-sm bg-gray-50"
             />
             <button
               onClick={() => handleSendMessage()}
               disabled={inputValue.trim() === "" || isLoading}
-              className="bg-[#3169a4] hover:bg-[#25527f] disabled:bg-gray-200 disabled:cursor-not-allowed text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors flex-shrink-0"
+              className="bg-blue-600 hover:bg-blue-700 disabled:bg-gray-200 disabled:cursor-not-allowed text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors flex-shrink-0"
             >
               <Send className="w-4 h-4" />
             </button>
