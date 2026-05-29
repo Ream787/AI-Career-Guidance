@@ -19,7 +19,7 @@ export function About() {
             alt="Belgium Campus students"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a5f]/95 via-[#1e3a5f]/80 to-[#1e3a5f]/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#3169a4]/95 via-[#3169a4]/80 to-[#3169a4]/60" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-16 text-white">
@@ -31,7 +31,7 @@ export function About() {
           </p>
           <Link
             to="/"
-            className="inline-block bg-white text-[#1e3a5f] px-8 py-4 text-lg hover:bg-gray-100 transition-colors"
+            className="inline-block bg-white text-[#3169a4] px-8 py-4 text-lg hover:bg-gray-100 transition-colors"
           >
             Explore Programmes
           </Link>
@@ -42,7 +42,7 @@ export function About() {
       <div className="max-w-7xl mx-auto px-6 py-20">
         {/* Who We Are */}
         <section className="mb-24">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-8">Who We Are</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#3169a4] mb-8">Who We Are</h2>
           <p className="text-xl text-gray-700 leading-relaxed max-w-4xl">
             Belgium Campus iTversity is a leading private higher education institution in South Africa,
             specialising in Information Technology and innovation-driven learning. Founded in 1999,
@@ -55,8 +55,8 @@ export function About() {
         <section className="mb-24 grid md:grid-cols-2 gap-16">
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <Target className="w-10 h-10 text-[#1e3a5f]" />
-              <h3 className="text-3xl font-bold text-[#1e3a5f]">Our Mission</h3>
+              <Target className="w-10 h-10 text-[#3169a4]" />
+              <h3 className="text-3xl font-bold text-[#3169a4]">Our Mission</h3>
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
               To empower students with cutting-edge IT knowledge and practical skills that prepare them
@@ -66,8 +66,8 @@ export function About() {
 
           <div>
             <div className="flex items-center gap-4 mb-6">
-              <Lightbulb className="w-10 h-10 text-[#1e3a5f]" />
-              <h3 className="text-3xl font-bold text-[#1e3a5f]">Our Vision</h3>
+              <Lightbulb className="w-10 h-10 text-[#3169a4]" />
+              <h3 className="text-3xl font-bold text-[#3169a4]">Our Vision</h3>
             </div>
             <p className="text-lg text-gray-700 leading-relaxed">
               To be a globally recognised IT institution producing innovative thinkers, problem-solvers,
@@ -78,7 +78,7 @@ export function About() {
 
         {/* What Makes Us Different */}
         <section className="mb-24">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-12">What Makes Us Different</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#3169a4] mb-12">What Makes Us Different</h2>
           <div className="space-y-4 max-w-4xl">
             {[
               "Industry-aligned curriculum designed with real-world application",
@@ -88,7 +88,7 @@ export function About() {
               "Support for innovation and emerging technologies"
             ].map((item, index) => (
               <div key={index} className="flex items-start gap-4">
-                <CheckCircle className="w-6 h-6 text-[#1e3a5f] flex-shrink-0 mt-1" />
+                <CheckCircle className="w-6 h-6 text-[#3169a4] flex-shrink-0 mt-1" />
                 <p className="text-lg text-gray-700">{item}</p>
               </div>
             ))}
@@ -100,7 +100,7 @@ export function About() {
         </section>
 
         {/* Our Impact */}
-        <section className="mb-24 bg-[#1e3a5f] text-white -mx-6 px-6 md:mx-0 py-16 md:py-20">
+        <section className="mb-24 bg-[#3169a4] text-white -mx-6 px-6 md:mx-0 py-16 md:py-20">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-bold mb-12">Our Impact</h2>
             <div className="grid md:grid-cols-3 gap-8">
@@ -128,24 +128,24 @@ export function About() {
 
         {/* Our Campuses */}
         <section className="mb-24">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-12">Our Campuses</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#3169a4] mb-12">Our Campuses</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="border-l-4 border-[#1e3a5f] pl-6">
-              <h3 className="text-2xl font-bold text-[#1e3a5f] mb-2">Pretoria (Main Campus)</h3>
+            <div className="border-l-4 border-[#3169a4] pl-6">
+              <h3 className="text-2xl font-bold text-[#3169a4] mb-2">Pretoria (Main Campus)</h3>
               <div className="flex items-start gap-2 text-gray-700">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
                 <p>138 Berg Ave, Heatherdale</p>
               </div>
             </div>
-            <div className="border-l-4 border-[#1e3a5f] pl-6">
-              <h3 className="text-2xl font-bold text-[#1e3a5f] mb-2">Kempton Park Campus</h3>
+            <div className="border-l-4 border-[#3169a4] pl-6">
+              <h3 className="text-2xl font-bold text-[#3169a4] mb-2">Kempton Park Campus</h3>
               <div className="flex items-start gap-2 text-gray-700">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
                 <p>45A Long Street</p>
               </div>
             </div>
-            <div className="border-l-4 border-[#1e3a5f] pl-6">
-              <h3 className="text-2xl font-bold text-[#1e3a5f] mb-2">Stellenbosch Campus</h3>
+            <div className="border-l-4 border-[#3169a4] pl-6">
+              <h3 className="text-2xl font-bold text-[#3169a4] mb-2">Stellenbosch Campus</h3>
               <div className="flex items-start gap-2 text-gray-700">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
                 <p>10 Distillery Road</p>
@@ -156,7 +156,7 @@ export function About() {
 
         {/* Facilities & Student Life */}
         <section className="mb-24">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-12">Facilities & Student Life</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#3169a4] mb-12">Facilities & Student Life</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl">
             {[
               "Modern hybrid classrooms",
@@ -166,7 +166,7 @@ export function About() {
               "Student accommodation and community activities"
             ].map((item, index) => (
               <div key={index} className="flex items-start gap-3">
-                <GraduationCap className="w-5 h-5 text-[#1e3a5f] flex-shrink-0 mt-1" />
+                <GraduationCap className="w-5 h-5 text-[#3169a4] flex-shrink-0 mt-1" />
                 <p className="text-lg text-gray-700">{item}</p>
               </div>
             ))}
@@ -175,7 +175,7 @@ export function About() {
 
         {/* Call to Action */}
         <section className="text-center py-16 border-t-2 border-gray-200">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#3169a4] mb-6">
             Ready to start your IT journey?
           </h2>
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
@@ -184,13 +184,13 @@ export function About() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:apply@belgiumcampus.ac.za"
-              className="bg-[#1e3a5f] hover:bg-[#2a4a7f] text-white px-10 py-4 text-lg transition-colors"
+              className="bg-[#3169a4] hover:bg-[#25527f] text-white px-10 py-4 text-lg transition-colors"
             >
               Apply Now
             </a>
             <Link
               to="/contact"
-              className="border-2 border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white px-10 py-4 text-lg transition-colors"
+              className="border-2 border-[#3169a4] text-[#3169a4] hover:bg-[#3169a4] hover:text-white px-10 py-4 text-lg transition-colors"
             >
               Contact Us
             </Link>

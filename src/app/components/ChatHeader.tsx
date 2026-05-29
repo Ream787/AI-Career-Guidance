@@ -13,11 +13,7 @@ export function ChatHeader() {
 
   useEffect(() => {
     const storedTheme = localStorage.getItem("bc_coursefinder_theme");
-    const nextTheme = storedTheme === "dark"
-      ? "dark"
-      : window.matchMedia("(prefers-color-scheme: dark)").matches
-      ? "dark"
-      : "light";
+    const nextTheme = storedTheme === "dark" ? "dark" : "light";
 
     setTheme(nextTheme);
     document.documentElement.classList.toggle("dark", nextTheme === "dark");
@@ -32,8 +28,8 @@ export function ChatHeader() {
 
   const isActive = (path: string) =>
     location.pathname === path
-      ? "text-[#1e3a5f] font-semibold"
-      : "text-gray-600 hover:text-[#1e3a5f]";
+      ? "text-[#3169a4] font-semibold"
+      : "text-gray-600 hover:text-[#3169a4]";
 
   const handleLogout = () => {
     logout();
@@ -53,11 +49,11 @@ export function ChatHeader() {
       <div className="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2.5">
-          <div className="bg-[#1e3a5f] p-2 rounded-lg">
+          <div className="bg-[#3169a4] p-2 rounded-lg">
             <GraduationCap className="w-5 h-5 text-white" />
           </div>
           <div>
-            <div className="text-[#1e3a5f] text-base leading-tight">BELGIUM CAMPUS</div>
+            <div className="text-[#3169a4] text-base leading-tight">BELGIUM CAMPUS</div>
             <div className="text-[10px] text-gray-500 leading-tight">iTversity</div>
           </div>
         </Link>
@@ -95,7 +91,7 @@ export function ChatHeader() {
                 onClick={() => setUserMenuOpen(!userMenuOpen)}
                 className="flex items-center gap-2 px-3 py-2 rounded-lg hover:bg-gray-50 border border-gray-100 transition-colors"
               >
-                <div className="w-7 h-7 rounded-full bg-[#1e3a5f] flex items-center justify-center">
+                <div className="w-7 h-7 rounded-full bg-[#3169a4] flex items-center justify-center">
                   <span className="text-white text-xs">{user.avatarInitials}</span>
                 </div>
                 <div className="text-left hidden sm:block">
@@ -136,13 +132,13 @@ export function ChatHeader() {
             <div className="flex items-center gap-2">
               <Link
                 to="/login"
-                className="px-4 py-2 text-sm text-[#1e3a5f] hover:bg-gray-50 rounded-lg transition-colors border border-gray-200"
+                className="px-4 py-2 text-sm text-[#3169a4] hover:bg-gray-50 rounded-lg transition-colors border border-gray-200"
               >
                 Sign In
               </Link>
               <Link
                 to="/register"
-                className="px-4 py-2 text-sm bg-[#1e3a5f] text-white hover:bg-[#2a4a7f] rounded-lg transition-colors"
+                className="px-4 py-2 text-sm bg-[#3169a4] text-white hover:bg-[#25527f] rounded-lg transition-colors"
               >
                 Register
               </Link>
@@ -200,14 +196,14 @@ export function ChatHeader() {
                 <Link
                   to="/login"
                   onClick={() => setMobileOpen(false)}
-                  className="flex-1 text-center px-4 py-2.5 border border-gray-200 rounded-lg text-sm text-[#1e3a5f]"
+                  className="flex-1 text-center px-4 py-2.5 border border-gray-200 rounded-lg text-sm text-[#3169a4]"
                 >
                   Sign In
                 </Link>
                 <Link
                   to="/register"
                   onClick={() => setMobileOpen(false)}
-                  className="flex-1 text-center px-4 py-2.5 bg-[#1e3a5f] text-white rounded-lg text-sm"
+                  className="flex-1 text-center px-4 py-2.5 bg-[#3169a4] text-white rounded-lg text-sm"
                 >
                   Register
                 </Link>

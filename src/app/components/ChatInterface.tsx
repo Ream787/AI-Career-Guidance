@@ -384,7 +384,7 @@ export function ChatInterface() {
             </button>
           )}
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 rounded-full bg-[#1e3a5f] flex items-center justify-center">
+            <div className="w-7 h-7 rounded-full bg-[#3169a4] flex items-center justify-center">
               <span className="text-white text-xs font-bold">BC</span>
             </div>
             <span className="text-sm font-semibold text-gray-800">BC CourseFinder™</span>
@@ -413,7 +413,7 @@ export function ChatInterface() {
             ))}
             {isLoading && (
               <div className="flex items-start gap-3 justify-start">
-                <div className="w-8 h-8 rounded-full bg-[#1e3a5f] flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-full bg-[#3169a4] flex items-center justify-center flex-shrink-0">
                   <span className="text-white text-sm font-semibold">BC</span>
                 </div>
                 <div className="bg-white rounded-2xl p-4 shadow-sm max-w-[55%]">
@@ -438,7 +438,7 @@ export function ChatInterface() {
                 <button
                   key={index}
                   onClick={() => handleSendMessage(topic.label)}
-                  className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#1e3a5f] hover:text-white hover:border-[#1e3a5f] text-gray-700 text-sm transition-colors shadow-sm"
+                  className="flex items-center gap-1.5 px-3 py-2 rounded-full border border-gray-300 bg-white hover:bg-[#3169a4] hover:text-white hover:border-[#3169a4] text-gray-700 text-sm transition-colors shadow-sm"
                 >
                   {topic.icon}
                   {topic.label}
@@ -457,12 +457,12 @@ export function ChatInterface() {
               onChange={(e) => setInputValue(e.target.value)}
               onKeyPress={handleKeyPress}
               placeholder="Message BC CourseFinder™..."
-              className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] focus:border-transparent text-sm bg-gray-50"
+              className="flex-1 px-4 py-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-[#3169a4] focus:border-transparent text-sm bg-gray-50"
             />
             <button
               onClick={() => handleSendMessage()}
               disabled={inputValue.trim() === "" || isLoading}
-              className="bg-[#1e3a5f] hover:bg-[#2a4a7f] disabled:bg-gray-200 disabled:cursor-not-allowed text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors flex-shrink-0"
+              className="bg-[#3169a4] hover:bg-[#25527f] disabled:bg-gray-200 disabled:cursor-not-allowed text-white w-11 h-11 rounded-full flex items-center justify-center transition-colors flex-shrink-0"
             >
               <Send className="w-4 h-4" />
             </button>

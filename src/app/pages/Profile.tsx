@@ -74,7 +74,7 @@ export function Profile() {
       <div className="max-w-3xl mx-auto space-y-6">
 
         {/* Header card */}
-        <div className="bg-gradient-to-r from-[#1e3a5f] to-[#2a4a7f] rounded-2xl p-6 text-white">
+        <div className="bg-gradient-to-r from-[#3169a4] to-[#25527f] rounded-2xl p-6 text-white">
           <div className="flex items-center gap-5">
             <div className="w-20 h-20 rounded-2xl bg-white/20 backdrop-blur flex items-center justify-center flex-shrink-0">
               <span className="text-2xl font-bold text-white">{user.avatarInitials}</span>
@@ -110,13 +110,13 @@ export function Profile() {
         {/* Personal Information */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="text-[#1e3a5f]">Personal Information</h2>
+            <h2 className="text-[#3169a4]">Personal Information</h2>
             {isEditing && (
               <div className="flex gap-2">
                 <button onClick={handleCancel} className="flex items-center gap-1.5 text-gray-500 hover:text-gray-700 border border-gray-200 px-3 py-1.5 rounded-lg text-sm transition-colors">
                   <X className="w-3.5 h-3.5" /> Cancel
                 </button>
-                <button onClick={handleSave} className="flex items-center gap-1.5 bg-[#1e3a5f] hover:bg-[#2a4a7f] text-white px-3 py-1.5 rounded-lg text-sm transition-colors">
+                <button onClick={handleSave} className="flex items-center gap-1.5 bg-[#3169a4] hover:bg-[#25527f] text-white px-3 py-1.5 rounded-lg text-sm transition-colors">
                   <Save className="w-3.5 h-3.5" /> Save Changes
                 </button>
               </div>
@@ -174,7 +174,7 @@ export function Profile() {
         </div>
 
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
-            <h2 className="text-[#1e3a5f] mb-5">Academic Information</h2>
+            <h2 className="text-[#3169a4] mb-5">Academic Information</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
               {user.studentNumber && (
                 <Field
@@ -202,7 +202,7 @@ export function Profile() {
                   <select
                     value={form.yearOfStudy}
                     onChange={(e) => setForm((p) => ({ ...p, yearOfStudy: Number(e.target.value) }))}
-                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm"
+                    className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm"
                   >
                     {[1, 2, 3, 4].map((y) => <option key={y} value={y}>Year {y}</option>)}
                   </select>
@@ -216,8 +216,8 @@ export function Profile() {
         {/* Career Interests */}
         <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
             <div className="flex items-center gap-2 mb-2">
-              <Star className="w-5 h-5 text-[#1e3a5f]" />
-              <h2 className="text-[#1e3a5f]">Career Interests</h2>
+              <Star className="w-5 h-5 text-[#3169a4]" />
+              <h2 className="text-[#3169a4]">Career Interests</h2>
             </div>
             <p className="text-gray-500 text-sm mb-4">
               {isEditing ? "Select the IT career areas you're interested in:" : "Your selected career interests"}
@@ -230,8 +230,8 @@ export function Profile() {
                     onClick={() => toggleInterest(interest)}
                     className={`px-3 py-1.5 rounded-full text-sm border transition-colors ${
                       form.careerInterests.includes(interest)
-                        ? "bg-[#1e3a5f] text-white border-[#1e3a5f]"
-                        : "bg-white text-gray-600 border-gray-200 hover:border-[#1e3a5f]"
+                        ? "bg-[#3169a4] text-white border-[#3169a4]"
+                        : "bg-white text-gray-600 border-gray-200 hover:border-[#3169a4]"
                     }`}
                   >
                     {form.careerInterests.includes(interest) ? "✓ " : "+ "}{interest}
@@ -239,7 +239,7 @@ export function Profile() {
                 ))
               ) : form.careerInterests.length > 0 ? (
                 form.careerInterests.map((interest) => (
-                  <span key={interest} className="px-3 py-1.5 bg-[#1e3a5f]/10 text-[#1e3a5f] border border-[#1e3a5f]/20 rounded-full text-sm">
+                  <span key={interest} className="px-3 py-1.5 bg-[#3169a4]/10 text-[#3169a4] border border-[#3169a4]/20 rounded-full text-sm">
                     {interest}
                   </span>
                 ))
@@ -277,7 +277,7 @@ function Field({ icon, label, value, editing, onChange, hint, placeholder, type 
           <select
             value={value}
             onChange={(e) => onChange(e.target.value)}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm bg-white"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm bg-white"
           >
             <option value="">Select {label.toLowerCase()}</option>
             {options.map((o) => <option key={o} value={o}>{o}</option>)}
@@ -288,7 +288,7 @@ function Field({ icon, label, value, editing, onChange, hint, placeholder, type 
             value={value}
             onChange={(e) => onChange(e.target.value)}
             placeholder={placeholder}
-            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm"
+            className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm"
           />
         )
       ) : (
