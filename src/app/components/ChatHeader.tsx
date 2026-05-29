@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { GraduationCap, Menu, X, LogOut, User, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
+import { GraduationCap, Menu, X, LogOut, User, ChevronDown, Moon, Sun } from "lucide-react";
 import { Link, useNavigate, useLocation } from "react-router";
 import { useAuth } from "../context/AuthContext";
 
@@ -9,6 +9,26 @@ export function ChatHeader() {
   const location = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("bc_coursefinder_theme");
+    const nextTheme = storedTheme === "dark"
+      ? "dark"
+      : window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+
+    setTheme(nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+  }, []);
+
+  const toggleTheme = () => {
+    const nextTheme = theme === "dark" ? "light" : "dark";
+    setTheme(nextTheme);
+    localStorage.setItem("bc_coursefinder_theme", nextTheme);
+    document.documentElement.classList.toggle("dark", nextTheme === "dark");
+  };
 
   const isActive = (path: string) =>
     location.pathname === path
@@ -57,6 +77,18 @@ export function ChatHeader() {
 
         {/* Right side */}
         <div className="hidden md:flex items-center gap-3">
+          <button
+            onClick={toggleTheme}
+            className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
+          >
+            {theme === "dark" ? (
+              <Sun className="w-5 h-5 text-gray-700" />
+            ) : (
+              <Moon className="w-5 h-5 text-gray-700" />
+            )}
+          </button>
+
           {isAuthenticated && user ? (
             <div className="relative">
               <button
@@ -155,6 +187,12 @@ export function ChatHeader() {
                   className="flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-red-600 hover:bg-red-50 w-full"
                 >
                   <LogOut className="w-4 h-4" /> Sign Out
+                </button>
+                <button
+                  onClick={toggleTheme}
+                  className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-gray-50 w-full"
+                >
+                  {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />} Toggle theme
                 </button>
               </>
             ) : (
