@@ -79,13 +79,13 @@ export function ChatHeader() {
         <div className="hidden md:flex items-center gap-3">
           <button
             onClick={toggleTheme}
-            className="p-2 rounded-lg border border-gray-200 hover:bg-gray-50 transition-colors"
+            className="p-2 rounded-lg border border-gray-200 bg-white text-gray-900 hover:bg-gray-50 transition-colors dark:bg-black dark:text-white dark:border-gray-700 dark:hover:bg-[#111]"
             title={theme === "dark" ? "Switch to light mode" : "Switch to dark mode"}
           >
             {theme === "dark" ? (
-              <Sun className="w-5 h-5 text-gray-700" />
+              <Sun className="w-5 h-5" />
             ) : (
-              <Moon className="w-5 h-5 text-gray-700" />
+              <Moon className="w-5 h-5" />
             )}
           </button>
 
@@ -190,7 +190,7 @@ export function ChatHeader() {
                 </button>
                 <button
                   onClick={toggleTheme}
-                  className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-gray-50 w-full"
+                  className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-lg text-sm text-gray-700 hover:bg-gray-50 w-full dark:text-white dark:hover:bg-[#111]"
                 >
                   {theme === "dark" ? <Sun className="w-4 h-4" /> : <Moon className="w-4 h-4" />} Toggle theme
                 </button>
