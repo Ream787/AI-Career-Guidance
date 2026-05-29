@@ -196,9 +196,12 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     setUser(null);
   };
 
+  const getAppUrl = () => {
+    return (import.meta.env.VITE_APP_URL || window.location.origin).replace(/\/+$/, "");
+  };
+
   const loginWithGoogle = async (): Promise<{ success: boolean; error?: string }> => {
-    const appUrl = import.meta.env.VITE_APP_URL || window.location.origin;
-    const redirectTo = `${appUrl.replace(/\/+$/, "")}/login`;
+    const redirectTo = `${getAppUrl()}/login`;
 
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "google",
@@ -221,7 +224,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       email: normalizedEmail,
       password: data.password,
       options: {
-        emailRedirectTo: `${window.location.origin}/login`,
+        emailRedirectTo: `${getAppUrl()}/login`,
       },
     });
 
