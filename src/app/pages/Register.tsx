@@ -67,7 +67,7 @@ export function Register() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1e3a5f] via-[#2a4a7f] to-[#1e3a5f] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#3169a4] via-[#25527f] to-[#3169a4] flex items-center justify-center p-4">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 right-20 w-64 h-64 rounded-full bg-white blur-3xl" />
         <div className="absolute bottom-20 left-20 w-96 h-96 rounded-full bg-[#c8a951] blur-3xl" />
@@ -78,7 +78,7 @@ export function Register() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-3 mb-2">
             <div className="bg-white p-3 rounded-xl shadow-lg">
-              <GraduationCap className="w-8 h-8 text-[#1e3a5f]" />
+              <GraduationCap className="w-8 h-8 text-[#3169a4]" />
             </div>
             <div className="text-left">
               <div className="text-white text-xl font-bold tracking-wide">BELGIUM CAMPUS</div>
@@ -90,7 +90,7 @@ export function Register() {
 
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <h2 className="text-[#1e3a5f] mb-1">Create your account</h2>
+          <h2 className="text-[#3169a4] mb-1">Create your account</h2>
           <p className="text-gray-500 text-sm mb-6">Enter your details to get started</p>
 
           {error && (
@@ -109,7 +109,7 @@ export function Register() {
                   value={formData.firstName}
                   onChange={(e) => update("firstName", e.target.value)}
                   placeholder="First name"
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm"
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm"
                 />
               </div>
               <div>
@@ -119,7 +119,7 @@ export function Register() {
                   value={formData.lastName}
                   onChange={(e) => update("lastName", e.target.value)}
                   placeholder="Last name"
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm"
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm"
                 />
               </div>
             </div>
@@ -130,7 +130,7 @@ export function Register() {
                 value={formData.email}
                 onChange={(e) => update("email", e.target.value)}
                 placeholder="you@belgiumcampus.ac.za"
-                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm"
+                className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm"
               />
             </div>
             <div>
@@ -141,7 +141,7 @@ export function Register() {
                   value={formData.password}
                   onChange={(e) => update("password", e.target.value)}
                   placeholder="Min. 6 characters"
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm pr-10"
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm pr-10"
                 />
                 <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                   {showPassword ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -156,7 +156,7 @@ export function Register() {
                   value={formData.confirmPassword}
                   onChange={(e) => update("confirmPassword", e.target.value)}
                   placeholder="Repeat your password"
-                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] text-sm pr-10"
+                  className="w-full px-3 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] text-sm pr-10"
                 />
                 <button type="button" onClick={() => setShowConfirm(!showConfirm)} className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400">
                   {showConfirm ? <EyeOff className="w-4 h-4" /> : <Eye className="w-4 h-4" />}
@@ -167,7 +167,7 @@ export function Register() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#1e3a5f] hover:bg-[#2a4a7f] disabled:opacity-60 disabled:cursor-not-allowed text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+              className="w-full bg-[#3169a4] hover:bg-[#25527f] disabled:opacity-60 disabled:cursor-not-allowed text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
             >
               {isLoading ? (
                 <>
@@ -185,7 +185,7 @@ export function Register() {
 
           <div className="mt-5 text-center">
             <span className="text-gray-500 text-sm">Already have an account? </span>
-            <Link to="/login" className="text-[#1e3a5f] text-sm font-semibold hover:underline">
+            <Link to="/login" className="text-[#3169a4] text-sm font-semibold hover:underline">
               Sign in
             </Link>
           </div>

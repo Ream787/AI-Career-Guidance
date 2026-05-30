@@ -32,7 +32,7 @@ export function Login() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1e3a5f] via-[#2a4a7f] to-[#1e3a5f] flex items-center justify-center p-4">
+    <div className="min-h-screen bg-gradient-to-br from-[#3169a4] via-[#25527f] to-[#3169a4] flex items-center justify-center p-4">
       {/* Background pattern */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-white blur-3xl" />
@@ -44,7 +44,7 @@ export function Login() {
         <div className="text-center mb-8">
           <div className="inline-flex items-center gap-3 mb-2">
             <div className="bg-white p-3 rounded-xl shadow-lg">
-              <GraduationCap className="w-8 h-8 text-[#1e3a5f]" />
+              <GraduationCap className="w-8 h-8 text-[#3169a4]" />
             </div>
             <div className="text-left">
               <div className="text-white text-xl font-bold tracking-wide">BELGIUM CAMPUS</div>
@@ -56,7 +56,7 @@ export function Login() {
 
         {/* Card */}
         <div className="bg-white rounded-2xl shadow-2xl p-8">
-          <h2 className="text-[#1e3a5f] mb-1">Welcome back</h2>
+          <h2 className="text-[#3169a4] mb-1">Welcome back</h2>
           <p className="text-gray-500 text-sm mb-6">Enter your credentials to access your account</p>
 
           {error && (
@@ -74,7 +74,7 @@ export function Login() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="you@belgiumcampus.ac.za"
-                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] focus:border-transparent transition"
+                className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] focus:border-transparent transition"
               />
             </div>
             <div>
@@ -85,7 +85,7 @@ export function Login() {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Enter your password"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#1e3a5f] focus:border-transparent transition pr-12"
+                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#3169a4] focus:border-transparent transition pr-12"
                 />
                 <button
                   type="button"
@@ -100,7 +100,7 @@ export function Login() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full bg-[#1e3a5f] hover:bg-[#2a4a7f] disabled:opacity-60 disabled:cursor-not-allowed text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
+              className="w-full bg-[#3169a4] hover:bg-[#25527f] disabled:opacity-60 disabled:cursor-not-allowed text-white py-3 rounded-lg flex items-center justify-center gap-2 transition-colors"
             >
               {isLoading ? (
                 <>
@@ -118,7 +118,7 @@ export function Login() {
 
           <div className="mt-6 text-center">
             <span className="text-gray-500 text-sm">Don't have an account? </span>
-            <Link to="/register" className="text-[#1e3a5f] text-sm font-semibold hover:underline">
+            <Link to="/register" className="text-[#3169a4] text-sm font-semibold hover:underline">
               Register here
             </Link>
           </div>

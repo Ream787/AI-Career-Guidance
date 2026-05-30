@@ -39,7 +39,7 @@ export function Contact() {
             alt="Contact Belgium Campus"
             className="w-full h-full object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#1e3a5f]/95 via-[#1e3a5f]/85 to-[#1e3a5f]/70" />
+          <div className="absolute inset-0 bg-gradient-to-r from-[#3169a4]/95 via-[#3169a4]/85 to-[#3169a4]/70" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-6 py-16 text-white">
@@ -59,12 +59,12 @@ export function Contact() {
             {/* Phone */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <Phone className="w-6 h-6 text-[#1e3a5f]" />
-                <h3 className="text-2xl font-bold text-[#1e3a5f]">Phone</h3>
+                <Phone className="w-6 h-6 text-[#3169a4]" />
+                <h3 className="text-2xl font-bold text-[#3169a4]">Phone</h3>
               </div>
               <a
                 href="tel:+27105935368"
-                className="text-lg text-gray-700 hover:text-[#1e3a5f] transition-colors"
+                className="text-lg text-gray-700 hover:text-[#3169a4] transition-colors"
               >
                 010 593 5368
               </a>
@@ -73,15 +73,15 @@ export function Contact() {
             {/* Email */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <Mail className="w-6 h-6 text-[#1e3a5f]" />
-                <h3 className="text-2xl font-bold text-[#1e3a5f]">Email</h3>
+                <Mail className="w-6 h-6 text-[#3169a4]" />
+                <h3 className="text-2xl font-bold text-[#3169a4]">Email</h3>
               </div>
               <div className="space-y-2">
                 <div>
                   <p className="text-sm text-gray-600">General Enquiries</p>
                   <a
                     href="mailto:info@belgiumcampus.ac.za"
-                    className="text-lg text-gray-700 hover:text-[#1e3a5f] transition-colors"
+                    className="text-lg text-gray-700 hover:text-[#3169a4] transition-colors"
                   >
                     info@belgiumcampus.ac.za
                   </a>
@@ -90,7 +90,7 @@ export function Contact() {
                   <p className="text-sm text-gray-600">Applications</p>
                   <a
                     href="mailto:apply@belgiumcampus.ac.za"
-                    className="text-lg text-gray-700 hover:text-[#1e3a5f] transition-colors"
+                    className="text-lg text-gray-700 hover:text-[#3169a4] transition-colors"
                   >
                     apply@belgiumcampus.ac.za
                   </a>
@@ -99,7 +99,7 @@ export function Contact() {
                   <p className="text-sm text-gray-600">Finance</p>
                   <a
                     href="mailto:finance@belgiumcampus.ac.za"
-                    className="text-lg text-gray-700 hover:text-[#1e3a5f] transition-colors"
+                    className="text-lg text-gray-700 hover:text-[#3169a4] transition-colors"
                   >
                     finance@belgiumcampus.ac.za
                   </a>
@@ -108,7 +108,7 @@ export function Contact() {
                   <p className="text-sm text-gray-600">Registrar</p>
                   <a
                     href="mailto:registrar@belgiumcampus.ac.za"
-                    className="text-lg text-gray-700 hover:text-[#1e3a5f] transition-colors"
+                    className="text-lg text-gray-700 hover:text-[#3169a4] transition-colors"
                   >
                     registrar@belgiumcampus.ac.za
                   </a>
@@ -119,8 +119,8 @@ export function Contact() {
             {/* Operating Hours */}
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <Clock className="w-6 h-6 text-[#1e3a5f]" />
-                <h3 className="text-2xl font-bold text-[#1e3a5f]">Operating Hours</h3>
+                <Clock className="w-6 h-6 text-[#3169a4]" />
+                <h3 className="text-2xl font-bold text-[#3169a4]">Operating Hours</h3>
               </div>
               <div className="space-y-1 text-lg text-gray-700">
                 <p>Monday – Friday: 08:00 – 17:00</p>
@@ -234,7 +234,7 @@ export function Contact() {
 
               <Button
                 type="submit"
-                className="w-full bg-[#1e3a5f] hover:bg-[#2a4a7f] text-white py-6 text-lg"
+                className="w-full bg-[#3169a4] hover:bg-[#25527f] text-white py-6 text-lg"
               >
                 <Send className="w-5 h-5 mr-2" />
                 Send Message
@@ -245,10 +245,10 @@ export function Contact() {
 
         {/* Campus Locations */}
         <section className="mb-24">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-12">Campus Locations</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#3169a4] mb-12">Campus Locations</h2>
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="border-l-4 border-[#1e3a5f] pl-6">
-              <h3 className="text-2xl font-bold text-[#1e3a5f] mb-4">Pretoria Campus</h3>
+            <div className="border-l-4 border-[#3169a4] pl-6">
+              <h3 className="text-2xl font-bold text-[#3169a4] mb-4">Pretoria Campus</h3>
               <div className="flex items-start gap-2 text-gray-700 mb-4">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
                 <p>138 Berg Ave, Heatherdale, Pretoria</p>
@@ -257,14 +257,14 @@ export function Contact() {
                 href="https://maps.google.com/?q=138+Berg+Ave+Heatherdale+Pretoria"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#1e3a5f] hover:underline inline-flex items-center gap-2"
+                className="text-[#3169a4] hover:underline inline-flex items-center gap-2"
               >
                 View on Map
               </a>
             </div>
 
-            <div className="border-l-4 border-[#1e3a5f] pl-6">
-              <h3 className="text-2xl font-bold text-[#1e3a5f] mb-4">Kempton Park Campus</h3>
+            <div className="border-l-4 border-[#3169a4] pl-6">
+              <h3 className="text-2xl font-bold text-[#3169a4] mb-4">Kempton Park Campus</h3>
               <div className="flex items-start gap-2 text-gray-700 mb-4">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
                 <p>45A Long Street, Kempton Park</p>
@@ -273,14 +273,14 @@ export function Contact() {
                 href="https://maps.google.com/?q=45A+Long+Street+Kempton+Park"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#1e3a5f] hover:underline inline-flex items-center gap-2"
+                className="text-[#3169a4] hover:underline inline-flex items-center gap-2"
               >
                 View on Map
               </a>
             </div>
 
-            <div className="border-l-4 border-[#1e3a5f] pl-6">
-              <h3 className="text-2xl font-bold text-[#1e3a5f] mb-4">Stellenbosch Campus</h3>
+            <div className="border-l-4 border-[#3169a4] pl-6">
+              <h3 className="text-2xl font-bold text-[#3169a4] mb-4">Stellenbosch Campus</h3>
               <div className="flex items-start gap-2 text-gray-700 mb-4">
                 <MapPin className="w-5 h-5 flex-shrink-0 mt-1" />
                 <p>10 Distillery Road, Stellenbosch</p>
@@ -289,7 +289,7 @@ export function Contact() {
                 href="https://maps.google.com/?q=10+Distillery+Road+Stellenbosch"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#1e3a5f] hover:underline inline-flex items-center gap-2"
+                className="text-[#3169a4] hover:underline inline-flex items-center gap-2"
               >
                 View on Map
               </a>
@@ -299,7 +299,7 @@ export function Contact() {
 
         {/* Footer CTA */}
         <section className="text-center py-16 border-t-2 border-gray-200">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1e3a5f] mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#3169a4] mb-6">
             Still have questions?
           </h2>
           <p className="text-xl text-gray-700 mb-10 max-w-2xl mx-auto">
@@ -312,13 +312,13 @@ export function Contact() {
                 e.preventDefault();
                 window.scrollTo({ top: 0, behavior: "smooth" });
               }}
-              className="bg-[#1e3a5f] hover:bg-[#2a4a7f] text-white px-10 py-4 text-lg transition-colors"
+              className="bg-[#3169a4] hover:bg-[#25527f] text-white px-10 py-4 text-lg transition-colors"
             >
               Send Message
             </a>
             <a
               href="mailto:apply@belgiumcampus.ac.za"
-              className="border-2 border-[#1e3a5f] text-[#1e3a5f] hover:bg-[#1e3a5f] hover:text-white px-10 py-4 text-lg transition-colors"
+              className="border-2 border-[#3169a4] text-[#3169a4] hover:bg-[#3169a4] hover:text-white px-10 py-4 text-lg transition-colors"
             >
               Apply Now
             </a>
